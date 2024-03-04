@@ -23,7 +23,8 @@ const onChangeSelect = (event) => {
 
 // функ. яка слідкує за наших фільтрів
 const onChangeSearchInput = debounce((event) => {
-  filters.searchQuery = event.target.value
+  f
+  ilters.searchQuery = event.target.value
 }, 250)
 
 const onClickAddPlus = (item) => {
@@ -132,11 +133,14 @@ watch(filters, fetchItems) // Слідкує за змінами sortBy, роб�
 </script>
 
 <template>
-  <div class="flex justify-between items-center">
-    <h2 class="text-3xl font-bold mb-8">Усі кросівки</h2>
+  <div class="flex flex-col md:flex-row justify-between items-center">
+    <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-0">Усі кросівки</h2>
 
-    <div class="flex gap-4">
-      <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
+    <div class="flex flex-col md:flex-row gap-4">
+      <select
+        @change="onChangeSelect"
+        class="py-2 px-3 md:w-auto border rounded-md outline-none text-sm md:text-base"
+      >
         <option value="name">Новинки</option>
         <option value="price">Ціна за зростанням</option>
         <option value="-price">Ціна за спаданням</option>
@@ -146,7 +150,7 @@ watch(filters, fetchItems) // Слідкує за змінами sortBy, роб�
         <img class="absolute left-4 top-3" src="/search.svg" alt="Search" />
         <input
           @input="onChangeSearchInput"
-          class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400"
+          class="w-full md:w-auto border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 placeholder:text-sm md:placeholder:text-base"
           type="text"
           placeholder="Пошук..."
         />
@@ -154,7 +158,7 @@ watch(filters, fetchItems) // Слідкує за змінами sortBy, роб�
     </div>
   </div>
 
-  <div class="mt-10">
+  <div class="mt-6 md:mt-10">
     <CardList :items="items" @add-to-favorite="addToFavorite" @add-to-cart="onClickAddPlus" />
   </div>
 </template>

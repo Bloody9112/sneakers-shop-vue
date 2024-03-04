@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <div
-    class="relative bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
+    class="relative bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
   >
     <img
       v-if="onClickFavorite"
@@ -27,7 +27,7 @@ defineProps({
 
     <p class="mt-2">{{ title }}</p>
 
-    <div class="flex justify-between mt-5">
+    <div class="flex justify-between mt-2 md:mt-4">
       <div class="flex flex-col">
         <span class="text-slate-400">Ціна:</span>
         <b>{{ price }} грн.</b>
