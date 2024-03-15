@@ -23,8 +23,7 @@ const onChangeSelect = (event) => {
 
 // функ. яка слідкує за наших фільтрів
 const onChangeSearchInput = debounce((event) => {
-  f
-  ilters.searchQuery = event.target.value
+  filters.searchQuery = event.target.value
 }, 250)
 
 const onClickAddPlus = (item) => {

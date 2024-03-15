@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <div
-    class="relative bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
+    class="max-w-80 relative bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
   >
     <img
       v-if="onClickFavorite"
@@ -23,7 +23,7 @@ defineProps({
       @click="onClickFavorite"
     />
 
-    <img :src="imageUrl" alt="Sneaker" />
+    <img :src="imageUrl" alt="Sneaker" style="max-height: 186.94px" />
 
     <p class="mt-2">{{ title }}</p>
 
